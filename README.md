@@ -1,6 +1,6 @@
-# RoadSync quick prototype
+# RoadSync mockup
 
-A self-contained browser demo of the RoadSync road incident workflow. No account or external service setup is needed.
+A role-based product mockup of the RoadSync concept. It shows how public travelers, police, PWD, ambulance services, and the RoadSync Authority could use a shared road information platform.
 
 ## Run it
 
@@ -8,16 +8,20 @@ A self-contained browser demo of the RoadSync road incident workflow. No account
 2. From this folder run `npm run dev`.
 3. Open the printed local URL (normally `http://localhost:4173`).
 
-## Demo flow
+## Explore the mockup
 
-1. Explore the preloaded, clearly labeled Goa sample incidents on the map.
-2. Change the simulated location to Margao or Vasco, or choose **Use my location** and allow the browser permission.
-3. Select **Report incident**, fill in the form, and submit. The report is saved as **Pending** and is hidden from the public incident list/map.
-4. Open **Incident reports**, then approve or reject the pending report. Approving adds it to the active map; resolving an approved report removes it from active warnings.
-5. Use the type filter, search, map zoom controls, and incident queue tabs to explore the prototype.
+Use the **View as** selector in the top bar:
 
-Reports persist in this browser's local storage. Use the browser's site data controls to reset the demo. Sample response and network insight figures are illustrative.
+- **Public traveler:** browse sample incidents, change the simulated city, view proximity notices, and preview a route.
+- **Police department:** submit a traffic report to the central review queue; see evidence and urgent warning placeholders.
+- **PWD department:** submit a roadwork notice and inspect a sample work progress tracker.
+- **Ambulance EMS:** activate and close a simulated emergency session, inspect demo route advisories, and see the privacy boundary.
+- **RoadSync Authority:** start with 32 sample reports: 8 pending, 16 active, 4 rejected, and 4 resolved across Goa. Inspect each report's department, evidence note, timestamp, and coordinates, then approve, reject, request follow-up, flag a duplicate, escalate, or resolve.
 
-## Scope
+Police and PWD reporting forms include **Use live location**. Clicking it asks the browser for location permission and attaches the returned latitude/longitude and accuracy to the report. If permission is denied or unavailable, the selected demo-area coordinates remain usable. Accident reports require a local image selection in the Police form; the image is not uploaded.
 
-This is a local, single-browser demonstrator. It has no Supabase connection, real authentication, server-side role enforcement, shared persistence, actual map tiles, official traffic feed, dispatch integration, or physical signal control. The map is a stylized Goa schematic with demo coordinates, and all reports are locally simulated. Proximity is a straight-line estimate. Do not use it for real traffic or emergency decisions.
+Department reports persist in this browser's local storage. Approval makes a report visible in the public map; resolving it removes it from active alerts. Use the browser's site data controls to reset the demo.
+
+## What is simulated
+
+This is a single-browser interface mockup. Role selection is not authentication or authorization. It has no Supabase, shared backend, secure evidence upload, agency identity verification, real dispatch or ambulance tracking, route engine, map tiles, live traffic data, actual emergency-publication policy, or connection to government systems. All organizations, incidents, hospital names, locations, operational status, travel times, and metrics are illustrative demo content. Ambulance coordinates and emergency activation are simulated. The map is a stylized schematic with approximate distances; route and proximity information must not be used for real travel or emergency decisions.
